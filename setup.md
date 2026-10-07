@@ -8,14 +8,30 @@ cd aeron
 git checkout 1.53.3   # 全程 pin 此 tag
 ```
 
-依赖(Agrona、SBE)版本由 Aeron 的 `version.txt` / Gradle 锁定,勿单独升级。
+依赖版本由 Aeron 的 `gradle/libs.versions.toml` 锁定,勿单独升级:
+
+| 组件 | 版本 | 锁定位置 |
+| --- | --- | --- |
+| aeron | 1.53.3 | `version.txt` |
+| agrona | 2.6.1 | `gradle/libs.versions.toml:2` |
+| sbe | 1.40.2 | `gradle/libs.versions.toml:18` |
+
+## 本地已就绪(2026-10-07)
+
+```bash
+# 已 clone 到仓库同级目录(shallow,已 pin)
+/Users/mark/GitHub/aeron    # tag 1.53.3
+/Users/mark/GitHub/agrona   # tag 2.6.1
+```
+
+阶段 0 实验为独立 `javac/java`,不依赖 Gradle,可直接跑(见 `labs/`)。
 
 ## JDK
 
-Aeron 1.46 起最低 JDK 17;本仓库统一 **JDK 21(LTS)**。
+Aeron 1.46 起最低 JDK 17;本仓库统一 **JDK 21(LTS)**。本机当前为 JDK 25,阶段 0 实验可正常运行。
 
 ```bash
-java -version   # 期望 21.x
+java -version   # 本机 25.x;构建/生产建议 21.x
 ```
 
 ## 构建

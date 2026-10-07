@@ -4,12 +4,12 @@
 
 ## 阶段 0 · 机械化同理心 + Agrona 底座(2 周)
 
-- [ ] 0.1 CPU 与内存:cache line、false sharing、MESI、padding/@Contended
+- [x] 0.1 CPU 与内存:cache line、false sharing、MESI、padding/@Contended(Day1,`docs/mechanical-sympathy.md`)
 - [ ] 0.2 内存模型:JMM、volatile、VarHandle acquire/release/opaque、Unsafe
 - [ ] 0.3 off-heap 与 mmap:直接内存、UnsafeBuffer、页对齐、hugepage
 - [ ] 0.4 Agrona:UnsafeBuffer、ManyToOneRingBuffer、BroadcastBuffer
 - [ ] 0.5 Agrona:CountersManager/AtomicCounter、IdleStrategy、Agent/AgentRunner
-- [ ] 实验 labs/jmh-false-sharing/
+- [x] 实验 labs/jmh-false-sharing/
 - [ ] 实验 labs/agrona-ringbuffer/
 - [ ] 产出 docs/mechanical-sympathy.md、docs/agrona.md
 
